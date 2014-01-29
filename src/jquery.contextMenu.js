@@ -1076,7 +1076,11 @@ var // currently active contextMenu trigger
                 
                     // add icons
                     if (item.icon) {
-                        $t.addClass("icon icon-" + item.icon);
+                        if (item.icon.indexOf("fa") === 0) {
+                            $t.prepend("<i class='fa " + item.icon + "'></i>");
+                        } else {
+                            $t.addClass("icon icon-" + item.icon);
+                        }
                     }
                 }
                 
